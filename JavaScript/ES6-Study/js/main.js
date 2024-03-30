@@ -195,3 +195,35 @@ var o2 = { c: 3 };
 
 // Array와 Object는 reference data type이다.
 // spread operator는 대괄호, 중괄호, 함수 소괄호 안에서만 사용할 수 있다.
+
+var sum = function(a, b, c){
+    console.log(a + b +c);
+}
+var array = [10, 20, 30];
+
+// 주먹구구 방식
+sum(array[0], array[1], array[2]);
+// 옛날 방식
+sum.apply(undefined, array);
+// Spread operator
+sum(...array);
+
+var person = {
+    a : function(){
+        console.log(this.name + '안녕')
+    }
+};
+var person2 = {
+    name : '손흥민'
+};
+
+// apply(a): a의 함수를 옮겨와서 실행, 파라미터를 array형태로 집어넣기 가능, 옛날방식 이해
+person.a                    // undefined안녕
+person.a.apply(person2);    // 손흥민안녕
+
+// call(): array와 비슷하지만 array형태 불가능
+person.a.call(person2, 1,2)
+
+// ===================================================================================================
+
+
