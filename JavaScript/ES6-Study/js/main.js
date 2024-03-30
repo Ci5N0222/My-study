@@ -111,7 +111,15 @@ const str = '재선언 X, 재할당 X';
 const people = {name: 'Kim'};
 Object.freeze(people);
 
-// Hoisting 현상: 변수의 선언을 변수 범위 맨위로 끌고오는 현상 (자바스크립트 언어의 특징)
+
+/**
+ *  Hoisting 현상
+ *   - 함수나 변수의 선언을 범위 맨위로 끌고오는 현상 (자바스크립트 언어의 특징)
+ *   - let, const는 Hoisting시 undefined가 자동으로 할당되지 않는다 (var는 undefined로 할당됨)
+ *   - 함수 표현식 (function(){}) : 전부 Hoisting 됨
+ *   - 변수 형식의 함수 (var func = function(){}) : 선언 부분만 Hoisting 
+ */
+
 
 // 전역변수: 모든 곳에서 사용 가능한 변수
 // 지역변수: 지정된 범위 내에서만 사용 가능한 변수
@@ -130,3 +138,34 @@ if(true){
     }
     console.log(b);  // 2 출력
 }
+
+
+// ===================================================================================================
+
+// template literals
+ 
+/**
+ *  backquote 문자열의 장점
+ *  1. 엔터키 가능
+ *  2. 중간중간 변수 넣기 쉬움
+ *  3. HTML 작성시 유용하다.
+ */
+
+// 1. 엔터 키 사용
+var name = '손흥민';
+var name = `손흥
+민`;
+
+// 2. 변수 사용
+var name1 = '손흥민';
+var content1 = '안녕하세요 저는 ' + name1 +'입니다';
+var content2 = `안녕하세요 저는 ${name1}입니다.`
+
+// 3. HTML 작성
+var template = `<div>${name1}</div>`
+
+// tagged literal
+function func(a) {
+    return a;
+}
+func`안녕하세요 ${name1}입니다.`
