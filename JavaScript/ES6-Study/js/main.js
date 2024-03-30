@@ -159,13 +159,39 @@ var name = `손흥
 // 2. 변수 사용
 var name1 = '손흥민';
 var content1 = '안녕하세요 저는 ' + name1 +'입니다';
-var content2 = `안녕하세요 저는 ${name1}입니다.`
+var content2 = `안녕하세요 저는 ${name1}입니다.`;
 
 // 3. HTML 작성
-var template = `<div>${name1}</div>`
+var template = `<div>${name1}</div>`;
 
 // tagged literal
 function func(a) {
     return a;
 }
-func`안녕하세요 ${name1}입니다.`
+func`안녕하세요 ${name1}입니다.`;
+
+
+// ===================================================================================================
+
+// spread operator
+
+// 1. Array에 붙이면 대괄호를 제거해줍니다.
+var array = ['hello', 'world'];  // hello world
+
+// 2. String에 붙이면 문자 한개씩 펼쳐줍니다.
+// str1[0] = h
+var str1 = 'hello';  // h e l l o
+
+// Array를 합(Deep copy)치거나 복사(Copy)할 수 있다.
+var a = [1, 2, 3];
+var b = [4, 5];
+var c = [...a, ...b];
+// [1, 2, 3, 4, 5]
+
+// Object에 붙이면 중괄호를 제거해줍니다.
+// Copy 하는데 값의 중복이 있다면, 가장 뒤에있는 것을 적용한다.
+var o1 = { a: 1, b: 2 };
+var o2 = { c: 3 };
+
+// Array와 Object는 reference data type이다.
+// spread operator는 대괄호, 중괄호, 함수 소괄호 안에서만 사용할 수 있다.
