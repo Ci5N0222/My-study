@@ -52,3 +52,41 @@ var obj = {
 // 결론 : this는 나를 담고 있는 오브젝트를 뜻한다.
 
 
+// ===================================================================================================
+
+// Arrow function
+/**
+ *  1. 입출력 기계 만들 때 보기가 쉽다.
+ *  2. 소괄호, 중괄호 생략 가능
+ *      - 파라미터 1개면 소괄호 생략 가능
+ *      - 코드가 한줄일 경우 중괄호 생략 가능
+ *  3. 함수를 목적에 맞게 사용해야 한다.
+ *      - 코드들을 기능으로 묶고 싶을 때 사용
+ *      - 입출력 기계를 만들고 싶을 때 사용
+ */
+ 
+// ES6 Arrow function
+const age = (a) => {
+    console.log(a);
+}
+// const age = a => console(a); 이런식으로 소괄호, 중괄호 생략 가능
+[1, 2, 3, 4].forEach(item => console.log(item));
+
+// Arrow function this?
+var obj = {
+    funct: function(){
+        this;   // obj
+    },
+    func: () => {
+        this;   // window
+    }
+}
+
+document.querySelector('#btn').addEventListener('click', (e) => {
+    this;           // window
+    e.currentTarget // this 대신 사용
+});
+
+
+// ===================================================================================================
+
