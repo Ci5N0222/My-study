@@ -1,4 +1,4 @@
-## HTML-Study
+## JavaScript-Study
 
 ### VSCode
 https://code.visualstudio.com/
