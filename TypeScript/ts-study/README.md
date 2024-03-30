@@ -24,3 +24,9 @@ $ yarn global add typescript
     }
 }
 ```
+### 3. .ts --> .js change
+.ts --> .js 로 변환해야 사용 가능하다.
+```bash
+$ tsc index.ts
+$ tsc -w
+```
