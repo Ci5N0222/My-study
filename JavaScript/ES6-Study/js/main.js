@@ -49,7 +49,8 @@ var obj = {
     }
 }
 
-// 결론 : this는 나를 담고 있는 오브젝트를 뜻한다.
+// this는 나를 담고 있는 오브젝트를 뜻한다.
+// window는 자바스크립트 기본 함수를 담은 {오브젝트} 이다
 
 
 // ===================================================================================================
@@ -90,3 +91,42 @@ document.querySelector('#btn').addEventListener('click', (e) => {
 
 // ===================================================================================================
 
+
+/**
+ *  변수
+ *  var: 재선언 O, 재할당 O, 범위: function
+ *  let: 재선언 X, 재할당 O, 범위: {}
+ *  const(constant: 상수): 재선언 X, 재할당 X, 범위: {}
+ */
+
+var name = 'Kim';
+var name = 'Noh';
+
+let number = 30;
+number = 40;
+
+const str = '재선언 X, 재할당 X';
+
+// 오브젝트 수정 불가로 만들기
+const people = {name: 'Kim'};
+Object.freeze(people);
+
+// Hoisting 현상: 변수의 선언을 변수 범위 맨위로 끌고오는 현상 (자바스크립트 언어의 특징)
+
+// 전역변수: 모든 곳에서 사용 가능한 변수
+// 지역변수: 지정된 범위 내에서만 사용 가능한 변수
+
+var name = 'Kim';       // 전역변수
+window.name = 'Kim'     // window로 만든 전역변수
+function names(){
+    var name = 'Kim';   // names() 함수 내에서만 사용되는 지역변수
+}
+
+if(true){
+    let a = 1;
+    var b = 2;
+    if(true){
+        let b=3;
+    }
+    console.log(b);  // 2 출력
+}
