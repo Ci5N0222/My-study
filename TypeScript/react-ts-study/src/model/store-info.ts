@@ -1,6 +1,3 @@
-// 2가지 형식으로 타입을 지정할 수 있음
-// type, interface
-
 // type 형식으로 지정
 export type StoreInfo = {
     name: string;
@@ -27,7 +24,7 @@ export type AddressWithoutZip = Omit<Address,'zipcode'>
 // 미리 정해둔 타입에서 사용하고 싶은 타입을 추가
 export type RestaurantOnlyCategory = Pick<StoreInfo, 'category'>
 
-
+// Api 데이터 사용법
 export type ApiResponse<T> = {
     data: T[],
     totalPage: number,
