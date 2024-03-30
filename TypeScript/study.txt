@@ -1,0 +1,4 @@
+Component 형식 타입 지정 (Component:React.FC)
+
+<type>: generic 문법, useState를 사용할 때 타입을 선언하기 위해 사용
+const [myRestaurant, setMyRestaurant] = useState<StoreInfo>(data);
