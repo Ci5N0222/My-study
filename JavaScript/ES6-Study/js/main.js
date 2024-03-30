@@ -196,7 +196,7 @@ var o2 = { c: 3 };
 // Array와 Object는 reference data type이다.
 // spread operator는 대괄호, 중괄호, 함수 소괄호 안에서만 사용할 수 있다.
 
-var sum = function(a, b, c){
+function sum(a, b, c){
     console.log(a + b +c);
 }
 var array = [10, 20, 30];
@@ -224,6 +224,35 @@ person.a.apply(person2);    // 손흥민안녕
 // call(): array와 비슷하지만 array형태 불가능
 person.a.call(person2, 1,2)
 
+
 // ===================================================================================================
 
+// 함수의 업그레이드
+// 자바스크립트는 파라미터가 2개 들어가는 함수인데 1개만 써도 에러가 발생하지 않는다.
 
+// 파라미터 자리에 함수도 입력 가능
+function inter(){
+    return 10;
+}
+
+// 함수의 default 파라미터(b자리에 아무것도 안넣을 경우 10을 넣는다)
+function sum(a, b = 10, c = inter()) {
+    console.log(a + b + c);
+}
+sum(1);         // 17
+sum(1, 2);      // 9
+sum(1, 2, 3);   // 6
+
+// arguments
+function arg(a, b, c) {
+    console.log(arguments);     // 파라미터를 Array 안에 넣은 변수
+    console.log(arguments[0]);  // a
+    console.log(arguments[1]);  // b
+    console.log(arguments[2]);  // c
+
+    arguments.map(item => console.log(item));
+}
+arg(1, 2, 3);
+
+
+// ===================================================================================================
