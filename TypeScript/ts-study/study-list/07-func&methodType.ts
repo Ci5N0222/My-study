@@ -6,13 +6,40 @@ const func07_1: FuncType = function(a){
     return 10;
 }
 
+type Member1 = {
+    name: string,
+    age: number,
+    plusOne: (x: number) => number,
+    changName: () => void
+}
+
 // Object 내 함수 만들기
-let members1 = {
+let members1: Member1 = {
     name: 'kim',
-    plusOne(a: number): number{
+    age: 10,
+    plusOne(a) {
         return a + 1;
     },
-    changName: () => {}
+    changName: () => {
+        console.log()
+    }
 }
-// 함수 사용
-members1.plusOne(1)
+
+type CutZero = (x:string) => string
+const cutZero: CutZero = function(x){
+    let str = x.replace(/^0+/, "");
+    return str;
+}
+
+type RemoveDash = (x: string) => number
+const removeDash: RemoveDash = function(x) {
+    let num = x.replace(/-/g, "");
+    return parseFloat(num);
+}
+
+type MakeFunc = (a: string, b: CutZero, c: RemoveDash) => number
+const makeFunc:MakeFunc = function(a, cutZero, removeDash){
+    let result = cutZero(a);
+    let result2 = removeDash(result);
+    return result2;
+}
