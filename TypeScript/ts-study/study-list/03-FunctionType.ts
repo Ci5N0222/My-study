@@ -32,3 +32,13 @@ function func05_3(x?: number): void {
 
 }
 
+// Test 1.
+const func05_4 = (x?: string) => {
+    if(x) console.log(`안녕하세요 ${x}`);
+    else console.log("이름이 없습니다");
+}
+
+// Test 2.
+function func05_5(x: number|string): number {
+    return x.toString().length;
+}
