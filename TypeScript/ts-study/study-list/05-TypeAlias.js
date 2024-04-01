@@ -20,5 +20,3 @@ myLocation.location = 'busan';
 const girlFriend = {
     name: 'juhee'
 };
-// GirlFriend 타입에있는 readonly 속성으로 name 변경 시 오류
-// girlFriend.name = 'minhee';
