@@ -10,3 +10,26 @@ class Person {
 Person.prototype.personFunc = function (a) { };
 let person1 = new Person('kim');
 let person2 = new Person('noh');
+class Car {
+    constructor(a, b) {
+        this.model = a;
+        this.price = b;
+    }
+    tax() {
+        return this.price * 0.1;
+    }
+}
+class Word {
+    constructor(...param) {
+        let numberList = [];
+        let strList = [];
+        param.forEach(item => {
+            if (typeof item === 'string')
+                strList.push(item);
+            else
+                numberList.push(item);
+        });
+        this.num = numberList;
+        this.str = strList;
+    }
+}

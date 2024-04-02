@@ -15,3 +15,35 @@ Person.prototype.personFunc = function(a){};
 
 let person1 = new Person('kim');
 let person2 = new Person('noh');
+
+
+class Car {
+    model: string;
+    price: number;
+    constructor(a: string, b: number){
+        this.model = a;
+        this.price = b;
+    }
+
+    tax(): number{
+        return this.price * 0.1;
+    }
+}
+
+class Word {
+    num: number[];
+    str: string[];
+
+    constructor(...param: (number|string)[]){
+        let numberList: number[] = [];
+        let strList: string[] = [];
+
+        param.forEach(item => {
+            if(typeof item === 'string') strList.push(item);
+            else numberList.push(item);
+        });
+
+        this.num = numberList;
+        this.str = strList;
+    }
+}
