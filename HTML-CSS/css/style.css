@@ -1,17 +1,22 @@
 :root {
+    /* CSS에서 사용할 변수 선언 */
     --text-whit: whit;
     --text-accent: #d49466;
     --color-bg: #263343;
 }
+
 body {
     margin: 0px;
     border-size: boder-box;
+
+    /* Google-font */
     font-family: "Rubik Scribble", system-ui;
     font-weight: 600;
     font-style: normal;
 }
 
 a {
+    /* a태그 밑줄 제거 */
     text-decoration: none;
     color: var(--text-white);
 }
@@ -39,6 +44,9 @@ a {
 }
 .nav-menu > a {
     padding: 8px 12px;
+}
+.nav-menu > a:hover {
+    color: var(--text-accent);
 }
 
 .nav-icons {
@@ -86,5 +94,12 @@ a {
     .nav-menu.active,
     .nav-icons.active {
         display: flex;
+    }
+
+    .nav-menu > a:hover {
+        width: 100%;
+        text-align: center;
+        background: var(--text-accent);
+        color: var(--text-white);
     }
 }
