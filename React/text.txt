@@ -8,3 +8,13 @@ Directory
     - public: static 파일 보관함
     - src: source 파일 보관함
     * package.json: 프로젝트 정보 및 라이브러리 정보
+
+Why State?
+    - 데이터 바인딩 시 State로 관리되는 변수값들은 자동으로 재 렌더링이 된다.
+      -> 일반 변수는 재렌더링 되지 않음
+    - const [title, setTitle] = useState("영화제목")
+      -> title은 useState("영화제목")의 "영화제목"이다.
+      -> setTitle은 title을 변경할 수 있는 함수
+    - 변동시 HTML이 재렌더링 되는 값들에 사용한다.
+      -> 온갖 변수를 사용하는 것이 아닌 값이 자주 바뀌는 것들을 state로 관리한다.
+    
