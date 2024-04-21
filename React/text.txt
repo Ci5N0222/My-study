@@ -1,0 +1,5 @@
+Why React?
+
+1. SPA (Single Paga Application)
+2. HTML 재사용이 편리하다
+3. 같은 문법으로 앱 개발 가능(React-Native)
