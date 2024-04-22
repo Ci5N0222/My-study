@@ -28,9 +28,18 @@ div {
 .contents span:hover {
   cursor: pointer;
 }
-
+.contents h4:hover {
+  cursor: pointer;
+}
 .contents h4 span {
   font-size: 12px;
   color: grey;
   margin-left: 7px;
+}
+
+.modal {
+  margin-top: 20px;
+  padding: 20px;
+  background: #eee;
+  text-align: left;
 }
