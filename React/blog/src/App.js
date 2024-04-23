@@ -8,7 +8,7 @@ function App() {
   const [like, setLike] = useState([0, 0, 0]);
   const [modal, setModal] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
-
+  const [input, setInput] = useState('');
   // Array 타입의 스테이트를 변경하기 위한 방법
   const titleUpdate = (i) => {
     // Spread opertor를 사용하여 기존 배열과 다른 배열로 deep copy 한다.
@@ -34,6 +34,12 @@ function App() {
     }
   }
 
+  const textEventHandler = () => {
+    let copy = [input, ...title];
+    setTitle(copy);
+  }
+
+
   return (
     <div className="App">
 
@@ -53,8 +59,11 @@ function App() {
             </section>
           ))
       }
+      
       <Modal title={ modalTitle } modal={ modal } />
 
+      <input type="text" onChange={(e) => { setInput(e.target.value) }}/>
+      <button onClick={() => { textEventHandler() }}></button>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Modal({ title, modal }) {
+export default function Modal({ title, modal, setTitle }) {
 
     return (
         modal &&
