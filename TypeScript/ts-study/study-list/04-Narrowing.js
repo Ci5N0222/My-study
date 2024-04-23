@@ -26,3 +26,21 @@ function func04_3(x) {
     let array = [];
     array[0] = x;
 }
+function func04_4(animal) {
+    if ('swim' in animal) {
+        animal.swim;
+    }
+    else if ('fly' in animal) {
+        animal.fly;
+    }
+}
+// instanceof 연산자로 object narrowing 가능
+let date = new Date();
+if (date instanceof Date) {
+}
+function func04_5(x) {
+    if (x.wheel === '4개')
+        '';
+    else if (x.wheel === '2개')
+        '';
+}

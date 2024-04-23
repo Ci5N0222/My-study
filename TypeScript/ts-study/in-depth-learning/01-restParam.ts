@@ -39,6 +39,7 @@ type User11 = {
     comment: number[],
     admin: boolean
 }
+
 function objFunc({ user, comment, admin }: User11): void {
     console.log(user, comment, admin);
 }
