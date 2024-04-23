@@ -25,16 +25,26 @@ div {
   border-bottom: 1px solid grey;
 }
 
-.contents span:hover {
+.contents .delete:hover {
   cursor: pointer;
 }
 .contents h4:hover {
   cursor: pointer;
 }
-.contents h4 span {
-  font-size: 12px;
+.contents p {
+  display:flex;
+  justify-content: space-between;
+  padding-right: 12px;
+}
+.contents .delete {
+  font-size: 14px;
   color: grey;
-  margin-left: 7px;
+  margin-right: 5px;
+}
+
+.input-box {
+  margin-top: 8px;
+  padding: 5px;
 }
 
 .modal {

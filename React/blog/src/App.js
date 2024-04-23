@@ -9,15 +9,16 @@ function App() {
   const [modal, setModal] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [input, setInput] = useState('');
+
   // Array 타입의 스테이트를 변경하기 위한 방법
-  const titleUpdate = (i) => {
-    // Spread opertor를 사용하여 기존 배열과 다른 배열로 deep copy 한다.
+  const titleDelete = (i) => {
     let copy = [...title];
-    copy[i] = '동내 맛집';
+    copy.splice(i, 1);
     setTitle(copy);
   }
 
   const upLike = (i) => {
+    // Spread opertor를 사용하여 기존 배열과 다른 배열로 deep copy 한다.
     let copy = [...like];
     copy[i] += 1;
     setLike(copy);
@@ -34,7 +35,7 @@ function App() {
     }
   }
 
-  const textEventHandler = () => {
+  const textSaveHandler = () => {
     let copy = [input, ...title];
     setTitle(copy);
   }
@@ -52,18 +53,23 @@ function App() {
             <section className='contents' key={ i }>
               <h4 onClick={() => modalHandler(i) }>
                 { item } 
-                <span onClick={() => titleUpdate(i) }>수정</span>
+                
               </h4>
               <span onClick={() => upLike(i) }>❤</span> { like[i] }
-              <p>2월 17일</p>
+              <p>
+                <span className='delete' onClick={() => titleDelete(i) }>삭제 </span>
+                <span>2024-04-23</span>
+              </p>
+
             </section>
           ))
       }
-      
-      <Modal title={ modalTitle } modal={ modal } />
 
-      <input type="text" onChange={(e) => { setInput(e.target.value) }}/>
-      <button onClick={() => { textEventHandler() }}></button>
+      <Modal title={ modalTitle } modal={ modal } />
+      <div className='input-box'>
+        <input type="text" onChange={(e) => { setInput(e.target.value) }}/>
+        <button onClick={() => { textSaveHandler() }}>저장</button>
+      </div>
     </div>
   );
 }
