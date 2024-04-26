@@ -6,5 +6,14 @@ app.listen(8080, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send('hi');
+    res.sendFile(__dirname + '/index.html');
 });
+
+app.get('/news', (req, res) => {
+    res.send('오늘 비옴');
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(__dirname + '/about.html');
+});
+
