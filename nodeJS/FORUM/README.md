@@ -24,3 +24,14 @@ app.get('/', (req, res) => {
     res.send('hi');
 });
 ```
+
+Nodemon
+- 소스코드가 수정될 떄 마다 node server.js를 재실행 해주는 라이브러리
+install
+```bash
+$ npm install -g nodemon
+```
+start
+```bash
+$ nodemon server.js
+```
