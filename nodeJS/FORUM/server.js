@@ -14,8 +14,3 @@ app.get('/', (req, res) => {
 app.get('/news', (req, res) => {
     res.send('오늘 비옴');
 });
-
-app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/about.html');
-});
-
