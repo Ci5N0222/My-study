@@ -35,3 +35,10 @@ start
 ```bash
 $ nodemon server.js
 ```
+
+MongoDB
+install
+```bash
+// MongoDB 5버전 설치
+$ npm install mongodb@5
+```
