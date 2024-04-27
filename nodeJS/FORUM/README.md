@@ -25,20 +25,26 @@ app.get('/', (req, res) => {
 });
 ```
 
-Nodemon
+## lib
+### Nodemon
 - 소스코드가 수정될 떄 마다 node server.js를 재실행 해주는 라이브러리
-install
 ```bash
+// install
 $ npm install -g nodemon
-```
-start
-```bash
+
+// start
 $ nodemon server.js
 ```
 
-MongoDB
-install
+### dotenv
+- .env 파일을 사용하여 ID, PW, URL 등 코드상으로 공유하지 않을 민감한 정보를 감추기 위해 사용
 ```bash
-// MongoDB 5버전 설치
+// install
+$ npm install dotenv
+```
+
+### MongoDB
+```bash
+// MongoDB 5버전 install
 $ npm install mongodb@5
 ```
