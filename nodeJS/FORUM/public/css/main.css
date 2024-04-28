@@ -14,3 +14,25 @@ body {
 .logo {
     font-weight: bold;
 }
+
+.grey-bg {
+    background: #eee;
+  }
+  .white-bg {
+    background: white;
+    margin: 20px;
+    border-radius: 5px;
+  }
+  .list-box {
+    padding : 10px;
+    border-bottom: 1px solid#eee;
+  }
+  .list-box h4{
+    font-size: 16px;
+    margin: 5px;
+  }
+  .list-box p {
+    font-size: 13px;
+    margin: 5px;
+    color: grey;
+  }

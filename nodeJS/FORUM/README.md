@@ -48,3 +48,10 @@ $ npm install dotenv
 // MongoDB 5버전 install
 $ npm install mongodb@5
 ```
+
+### ejs
+- JavaScript 문법 그대로 html을 사용할 수 있음
+```bash
+// ejs install
+$ npm install ejs
+```

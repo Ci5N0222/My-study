@@ -1,10 +1,14 @@
 require('dotenv').config();
 const { NODE_MONGODB_URL } = process.env;
-const express = require('express')
-const app = express()
-const { MongoClient } = require('mongodb')
+const express = require('express');
+const app = express();
+const { MongoClient } = require('mongodb');
 
+// public directory
 app.use(express.static(__dirname + '/public'));
+
+// ejs setting
+app.set('view engine', 'ejs');
 
 new MongoClient(NODE_MONGODB_URL).connect().then((client)=>{
   db = client.db('forum_node')
@@ -26,9 +30,8 @@ app.get('/news', (req, res) => {
     // res.send('오늘 비옴');
 });
 
-// DB 저장 예제
+// DB 조회 예제
 app.get('/list', async (req, res) => {
-  let result = await db.collection('post').find().toArray();
-  console.log(result);
-  res.send('DB에 있는 게시물');
+  let response = await db.collection('post').find().toArray();
+  res.render('list.ejs', {result: 'OK', value: response});
 });
