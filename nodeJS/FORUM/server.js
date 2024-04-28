@@ -26,4 +26,9 @@ app.get('/news', (req, res) => {
     // res.send('오늘 비옴');
 });
 
-
+// DB 저장 예제
+app.get('/list', async (req, res) => {
+  let result = await db.collection('post').find().toArray();
+  console.log(result);
+  res.send('DB에 있는 게시물');
+});
