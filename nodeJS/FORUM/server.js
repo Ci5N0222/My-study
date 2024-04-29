@@ -35,3 +35,4 @@ app.get('/list', async (req, res) => {
   let response = await db.collection('post').find().toArray();
   res.render('list.ejs', {result: 'OK', value: response});
 });
+ 

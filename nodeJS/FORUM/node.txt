@@ -1,3 +1,26 @@
 구글의 크롬 브라우저 자바스크립트 실행엔진 (v8엔진)
 JavaScript Runtime
 Non-blocking I/O
+
+
+REST API
+1. Uniform Interface
+    - 일관성있는 URL이 좋음
+    - 하나의 URL + method는 하나의 데이터를 보낸다.
+2. Client-Server 구분
+    - 유저에게 서버역항르 맡기지 말라
+3. Stateless
+    - 요청끼리 서로 의존성이 있으면 안됨
+4. Cacheability
+    - 요청은 캐싱이 가능해야함
+    - 자주 수신되는 자료들은 요청 날리지 않고 하드에 저장
+5. Layered system
+    - 요청 하나는 최종 응답전까지 여러 단계를 거쳐도 된다.
+6. Code on demand
+    - 서버는 유저에게 실행 가능한 코드를 보내줄 수도 있음
+
+좋은 URL 작명 관습
+    - 동사보다는 명사 위주
+    - 띄어쓰기는 언더바_대신 대시-기호
+    - 파일 확장자 쓰지말기 (.html)
+    - 하위 문서들을 뜻할 때는 /기호를 사용함 (하위 폴더 같은 느낌)
