@@ -51,11 +51,22 @@ app.get('/write', (req, res) => {
 });
 
 // form으로 전달 받은 데이터
-app.post('/add', (req, res) => {
+app.post('/add', async(req, res) => {
   const title = req.body.title;
   const content = req.body.content;
-  console.log("body === ", req.body);
-  console.log("title ==== ", title);
-  console.log("content ==== ", content);
-  db.collection('post').insertOne({title, content});
+  try {
+
+    if(title === '') {
+      res.send("제목을 입력하세요");
+    } else if (content === ''){
+      res.send("내용을 입력하세요");
+    } else {
+      await db.collection('post').insertOne({title: title, content: content});
+      res.redirect('/list');  
+    } 
+  } catch (e) {
+    console.log("Error : ", e);
+    res.send("Error : ", e);
+    
+  }
 });
