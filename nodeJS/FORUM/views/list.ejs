@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lng="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,10 @@
     1. ejs 쓰면 html 안에서 서버데이터 사용 가능
     2. ejs 파일은 views 폴더안에 만든다.
     3. res.render로 유저에게 페이지를 보내준다.
-    4. ejs 파일로 서버데이터 전송하고 <%= 데이터명 %> 으로 HTML에 사용
 -->
 
 <body class="grey-bg">
-
     <%= JSON.stringify(value) %>
-
     <div class="white-bg">
       <div class="list-box">
         <h4><%= value[0].title %></h4>
