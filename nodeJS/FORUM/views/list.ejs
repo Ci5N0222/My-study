@@ -15,16 +15,17 @@
 -->
 
 <body class="grey-bg">
-    <%= JSON.stringify(value) %>
+  <!-- include (재사용 용이) -->
+  <%- include('nav.ejs') %>
+
     <div class="white-bg">
-      <div class="list-box">
-        <h4><%= value[0].title %></h4>
-        <p><%= value[0].contetn %></p>
-      </div>
-      <div class="list-box">
-        <h4><%= value[1].title %></h4>
-        <p><%= value[1].content %></p>
-      </div>
+      <% for(let i=0; i<value.length; i++){ %>
+        <div class="list-box">
+          <h4><%= value[i].title %></h4>
+          <p><%= value[i].content %></p>
+        </div>
+      <% } %>
+      
     </div> 
   
   </body>
