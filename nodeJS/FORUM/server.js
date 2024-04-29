@@ -2,7 +2,7 @@ require('dotenv').config();
 const { NODE_MONGODB_URL } = process.env;
 const express = require('express');
 const app = express();
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 // public directory
 app.use(express.static(__dirname + '/public'));
@@ -67,6 +67,24 @@ app.post('/add', async(req, res) => {
   } catch (e) {
     console.log("Error : ", e);
     res.send("Error : ", e);
-    
+
   }
+
+});
+
+// URL parameter
+app.get('/detail/:id', async(req, res) => {
+  // url parameter 사용 법
+  const id = req.params.id;
+  
+  try {
+    let result = await db.collection('post').findOne({ _id: new ObjectId(id) });
+    if(result !== null) res.render('detail.ejs', {result : 'OK', value: result});
+    else res.send("URL 오류");
+
+  } catch (e) {
+    console.log("Error : ", e);
+    res.status(404).send("URL 오류");
+  }
+  
 });
