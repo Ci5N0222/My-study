@@ -10,6 +10,10 @@ app.use(express.static(__dirname + '/public'));
 // ejs setting
 app.set('view engine', 'ejs');
 
+// 유저가 보낸 데이터를 보냈을 때 req.body로 편하게 쓸 수 있게 도와줌
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 new MongoClient(NODE_MONGODB_URL).connect().then((client)=>{
   db = client.db('forum_node')
   app.listen(8080, () => {
@@ -36,3 +40,22 @@ app.get('/list', async (req, res) => {
   res.render('list.ejs', {result: 'OK', value: response});
 });
  
+/**
+ *  글 작성 기능
+ *  1. 글 작성 페이지에서 쓴 글 서버로 전송
+ *  2. 서버는 글을 검사
+ *  3. 이상 없으면 DB에 저장
+ */
+app.get('/write', (req, res) => {
+  res.render('write.ejs');
+});
+
+// form으로 전달 받은 데이터
+app.post('/add', (req, res) => {
+  const title = req.body.title;
+  const content = req.body.content;
+  console.log("body === ", req.body);
+  console.log("title ==== ", title);
+  console.log("content ==== ", content);
+  db.collection('post').insertOne({title, content});
+});

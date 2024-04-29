@@ -15,18 +15,16 @@
 -->
 
 <body class="grey-bg">
-  <!-- include (재사용 용이) -->
-  <%- include('nav.ejs') %>
 
-    <div class="white-bg">
-      <% for(let i=0; i<value.length; i++){ %>
-        <div class="list-box">
-          <h4><%= value[i].title %></h4>
-          <p><%= value[i].content %></p>
-        </div>
-      <% } %>
-      
-    </div> 
+    <!-- Nav -->
+    <%- include('nav.ejs') %>
+
+    <form class="form-box" action="/add" method="POST">
+        <h4>글쓰기</h4>
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="content" placeholder="content">
+        <button type="submit">전송</button>
+    </form> 
   
   </body>
 </html>
