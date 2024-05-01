@@ -21,8 +21,10 @@
     <div class="white-bg">
       <% for(let i=0; i<value.length; i++){ %>
         <div class="list-box">
-          
-          <h4><a href="/detail/<%= value[i]._id %>"><%= value[i].title %></a></h4>
+          <h4>
+            <a href="/detail/<%= value[i]._id %>"><%= value[i].title %></a>
+            <a href="/edit/<%= value[i]._id %>">✏️</a>
+          </h4>
           <p><%= value[i].content %></p>
         </div>
       <% } %>

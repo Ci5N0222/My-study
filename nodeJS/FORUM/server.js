@@ -78,13 +78,49 @@ app.get('/detail/:id', async(req, res) => {
   const id = req.params.id;
   
   try {
-    let result = await db.collection('post').findOne({ _id: new ObjectId(id) });
-    if(result !== null) res.render('detail.ejs', {result : 'OK', value: result});
+    let response = await db.collection('post').findOne({ _id: new ObjectId(id) });
+    if(response !== null) res.render('detail.ejs', {result : 'OK', value: response});
     else res.send("URL 오류");
 
   } catch (e) {
     console.log("Error : ", e);
     res.status(404).send("URL 오류");
+  }
+  
+});
+
+/**
+ *  수정기능
+ *  1. 수정버튼 누르면 수정 페이지로
+ *  2. 수정페이지엔 기존 글이 채워져 있음
+ *  3. 전송 누르면 입력한 내용으로 DB 글 수정
+ */
+app.get('/edit/:id', async(req, res) => {
+  const id = req.params.id;
+
+  try{
+    let response = await db.collection('post').findOne({ _id: new ObjectId(id) });
+    if(response !== null) res.render('edit.ejs', { result:"OK", value: response});
+    else res.status(404).send("URL 오류");
+  } catch (e) {
+    console.log("Error : ", e);
+    res.status(404).send("URL 오류");
+  }
+  
+});
+
+// db.collection('post').updateOne({"어떤 document"}, {$set : {어떤 내용으로 수정할지}})
+app.post('/update', async(req, res) => {
+  const id = req.body.id;
+  const title = req.body.title;
+  const content = req.body.content;
+
+  try {
+    await db.collection('post').updateOne({ _id : new ObjectId(id) }, {$set: { title: title, content: content }});
+    res.redirect(`/detail/${id}`);
+  } catch (e) {
+    console.log("Error : ", e);
+    res.send("수정 중 오류 발생");
   }
   
 });
