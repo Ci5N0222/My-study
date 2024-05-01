@@ -109,18 +109,24 @@ app.get('/edit/:id', async(req, res) => {
   
 });
 
-// db.collection('post').updateOne({"어떤 document"}, {$set : {어떤 내용으로 수정할지}})
+// 업데이트
 app.post('/update', async(req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const content = req.body.content;
 
-  try {
-    await db.collection('post').updateOne({ _id : new ObjectId(id) }, {$set: { title: title, content: content }});
-    res.redirect(`/detail/${id}`);
-  } catch (e) {
-    console.log("Error : ", e);
-    res.send("수정 중 오류 발생");
+  if(title === '') {
+    res.send("제목을 입력하세요");
+  } else if (content === ''){
+    res.send("내용을 입력하세요");
+  } else {
+    try {
+      await db.collection('post').updateOne({ _id : new ObjectId(id) }, {$set: { title, content }});
+      res.redirect(`/detail/${id}`);
+    } catch (e) {
+      console.log("Error : ", e);
+      res.send("수정 중 오류 발생");
+    }
   }
-  
+
 });
