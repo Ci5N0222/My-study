@@ -24,11 +24,12 @@ a:active {
     padding: 15px;
     align-items: center;
 }
-
 .nav a {
-    margin-right: 10px;
+    font-size: 18px;
+    margin: 0 10px;
 }
-.logo {
+.nav .logo {
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -42,7 +43,7 @@ a:active {
   }
   .list-box {
     padding : 10px;
-    border-bottom: 1px solid#eee;
+    border-bottom: 4px solid#eee;
   }
   .list-box h4{
     font-size: 16px;
@@ -82,4 +83,8 @@ a:active {
     background: white;
     padding: 15px;
     margin-top: 10px;
+  }
+  
+  .delete:hover {
+    cursor: pointer;
   }
