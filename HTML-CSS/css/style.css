@@ -1,14 +1,13 @@
 :root {
     /* CSS에서 사용할 변수 선언 */
-    --text-whit: whit;
+    --text-whit: white;
     --text-accent: #d49466;
     --color-bg: #263343;
 }
 
 body {
     margin: 0px;
-    border-size: boder-box;
-
+    background: #263343;
     /* Google-font */
     font-family: "Rubik Scribble", system-ui;
     font-weight: 600;
@@ -25,8 +24,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-bg);
-    color: white;
+    background: #eee;
+    color: var(--color-bg);
     padding: 8px 12px;
 }
 
@@ -103,3 +102,4 @@ a {
         color: var(--text-white);
     }
 }
+
