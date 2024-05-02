@@ -38,9 +38,11 @@
       for(let i=0; i<deleteBtn.length; i++){
         deleteBtn[i].addEventListener('click', async (e) => {
           const targetId = e.target.dataset.id;
-          await fetch(`/delete?id=${targetId}`, {
+          const response = await fetch(`/delete?id=${targetId}`, {
             method: 'DELETE'
           })
+          const data = await response.json();
+          console.log(JSON.stringify(data));
         });
       }
 

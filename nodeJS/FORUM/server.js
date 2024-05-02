@@ -147,5 +147,5 @@ app.delete('/delete', async(req, res) => {
   // query string 사용 법
   const qstr = req.query.id;
   await db.collection('post').deleteOne({_id : new ObjectId(qstr)});
-  res.send("삭제완료");
+  res.send({result: "OK"});
 });
