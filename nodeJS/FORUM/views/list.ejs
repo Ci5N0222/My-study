@@ -19,17 +19,31 @@
   <%- include('nav.ejs') %>
 
     <div class="white-bg">
+
       <% for(let i=0; i<value.length; i++){ %>
         <div class="list-box">
           <h4>
             <a href="/detail/<%= value[i]._id %>"><%= value[i].title %></a>
             <a href="/edit/<%= value[i]._id %>">✏️</a>
+            <span class="delete" data-id="<%= value[i]._id %>">🗑️</span>
           </h4>
           <p><%= value[i].content %></p>
         </div>
       <% } %>
-      
+
     </div> 
-  
+    <script>
+
+      const deleteBtn = document.querySelectorAll('.delete');
+      for(let i=0; i<deleteBtn.length; i++){
+        deleteBtn[i].addEventListener('click', async (e) => {
+          const targetId = e.target.dataset.id;
+          await fetch(`/delete?id=${targetId}`, {
+            method: 'DELETE'
+          })
+        });
+      }
+
+    </script>
   </body>
 </html>

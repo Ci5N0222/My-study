@@ -28,7 +28,7 @@ new MongoClient(NODE_MONGODB_URL).connect().then((client)=>{
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render('index.ejs');
 });
 
 // DB 저장 예제
@@ -135,4 +135,17 @@ app.post('/edit', async(req, res) => {
       res.send("수정 중 오류 발생");
     }
   }
+});
+
+
+/**
+ *  삭제기능
+ *  1. 글 삭제버튼 누르면 서버로 요청
+ *  2. 서버는 확인 후 해당 글 DB에서 삭제
+ */
+app.delete('/delete', async(req, res) => {
+  // query string 사용 법
+  const qstr = req.query.id;
+  await db.collection('post').deleteOne({_id : new ObjectId(qstr)});
+  res.send("삭제완료");
 });
