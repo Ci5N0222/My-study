@@ -40,8 +40,11 @@
           const targetId = e.target.dataset.id;
           const response = await fetch(`/delete?id=${targetId}`, {
             method: 'DELETE'
-          })
+          });
           const data = await response.json();
+          if(data.result === 'OK'){
+            e.target.parentElement.parentElement.style.display = 'none';
+          }
           console.log(JSON.stringify(data));
         });
       }
