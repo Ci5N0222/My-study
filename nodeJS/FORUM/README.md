@@ -55,3 +55,10 @@ $ npm install mongodb@5
 // ejs install
 $ npm install ejs
 ```
+
+### method-override
+- form 태그에서 delete, put, patch 요청을 사용할 수 있게하는 라이브러리
+``` bash
+// method-override install
+$ npm install method-override
+```

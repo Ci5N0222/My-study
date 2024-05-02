@@ -3,6 +3,10 @@ const { NODE_MONGODB_URL } = process.env;
 const express = require('express');
 const app = express();
 const { MongoClient, ObjectId } = require('mongodb');
+const methodOverride = require('method-override');
+
+// Method-override
+app.use(methodOverride('_method-override'));
 
 // public directory
 app.use(express.static(__dirname + '/public'));
@@ -110,7 +114,7 @@ app.get('/edit/:id', async(req, res) => {
 });
 
 // 업데이트
-app.post('/update', async(req, res) => {
+app.post('/edit', async(req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const content = req.body.content;
@@ -121,12 +125,14 @@ app.post('/update', async(req, res) => {
     res.send("내용을 입력하세요");
   } else {
     try {
+      // 하나의 document를 수정할 때 ( updateOne )
       await db.collection('post').updateOne({ _id : new ObjectId(id) }, {$set: { title, content }});
+      // 여러개의 document를 수정하고 싶을 때 ( updateMany )
+      await db.collection('post').updatemany({_id: 1}, {$inc: {like: 1}});
       res.redirect(`/detail/${id}`);
     } catch (e) {
       console.log("Error : ", e);
       res.send("수정 중 오류 발생");
     }
   }
-
 });
