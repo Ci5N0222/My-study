@@ -68,8 +68,7 @@
             background-size: 100%;
         }
         .bg-image1 {
-            /* background-image: url('img/image1.jpg'); */
-            background-image: url('img/momo.png');
+            background-image: url('img/image1.jpg');
             background-size: 100%;
         }
         .bg-image2 {
@@ -89,7 +88,6 @@
 
 </head>
 <body>
-    <div class="bg-image1" id="momo" style="width: 700px; height: 700px; display: none; position:absolute;"></div>
     <div class="container">
         <div class="col1 bg-orange">
             <p class="text-col">Flex Practice</p>
@@ -105,5 +103,35 @@
             <div class="row1 bg-purple" id="box4"></div>
         </div>
     </div>
+
+    <script>
+        
+        const box2 = document.querySelector('#box2');
+        box2.addEventListener('click', () => {
+            if(document.querySelector('.bg-image1')){
+                box2.classList.remove('bg-image1');
+            } else {
+                box2.classList.add('bg-image1');
+            }
+        });
+        const box3 = document.querySelector('#box3');
+        box3.addEventListener('click', () => {
+            if(document.querySelector('.bg-image2')){
+                box3.classList.remove('bg-image2');
+            } else {
+                box3.classList.add('bg-image2');
+            }
+        });
+        const box4 = document.querySelector('#box4');
+        box4.addEventListener('click', () => {
+            if(document.querySelector('.bg-avatar2')){
+                box4.classList.remove('bg-avatar2');
+            } else {
+                box4.classList.add('bg-avatar2');
+            }
+        });
+
+    </script>
+
 </body>
 </html>
