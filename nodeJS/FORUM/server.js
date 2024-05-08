@@ -149,3 +149,12 @@ app.delete('/delete', async(req, res) => {
   await db.collection('post').deleteOne({_id : new ObjectId(qstr)});
   res.send({result: "OK"});
 });
+
+/**
+ *  페이지네이션
+ */
+app.get('/list/:id', async (req, res) => {
+  const id = req.params.id;
+  let response = await db.collection('post').find().skip((id-1)*5).limit(5).toArray();
+  res.render('list.ejs', {result: 'OK', value: response});
+});
