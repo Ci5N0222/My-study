@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 18px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <fieldset>
+        <legend> Fruits </legend>
+        <div id="fruitsList"></div>
+    </fieldset>
+    <br />
+
+    <input type="text" id="front" placeholder="앞에 추가할 값">
+    <button onclick="addFront()">앞쪽에 추가</button>
+    <button onclick="deleteFront()">앞에서 삭제</button>
+    <br />
+
+    <input type="text" id="back" placeholder="뒤에 추가할 값">
+    <button onclick="addBack()">뒷쪽에 추가</button>
+    <button onclick="deleteBack()">뒤에서 삭제</button>
+
+    <script>
+        let fruits = [];
+        const front = document.querySelector('#front');
+        const back = document.querySelector('#back');
+        const fruitsList = document.querySelector('#fruitsList');
+
+        // 맨 앞 추가
+        const addFront = () => {
+            if(front.value == "") return alert("빈칸임");
+            else if(!isNaN(front.value)) {
+                front.value = "";
+                return alert("숫자임");
+            }
+
+            fruits.unshift(front.value);
+            fruitsList.innerHTML = fruits.join(', ');
+            front.value = "";
+        }
+
+        // 맨 앞 삭제
+        const deleteFront = () => {
+            if(fruits.length === 0) return alert("아무것도 없음");
+
+            fruits.shift();
+            fruitsList.innerHTML = fruits.join(', ');
+        }
+
+        // 맨 뒤 추가
+        const addBack = () => {
+            if(back.value == "") return alert("빈칸임");
+            else if(!isNaN(back.value)){
+                back.value = "";
+                return alert("숫자임");
+            } 
+
+            fruits.push(back.value);
+            fruitsList.innerHTML = fruits.join(', ');
+            back.value = "";
+        }
+
+        // 맨 뒤 삭제
+        const deleteBack = () => {
+            if(fruits.length === 0) return alert("아무것도 없음");
+
+            fruits.pop();
+            fruitsList.innerHTML = fruits.join(', ');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        /** 배열 메서드 **/
+
+        let arr = ["Java", "Python", "Ruby", "C++"];
+
+        // indexOf : 배열안에서 특정 요소가 있을 경우 그 요소의 인덱스를 반환, 그 요소가 없을 경우 -1 반환
+        let result1 = arr.indexOf("Ruby");
+        console.log("indexOf() ==== ", result1);
+
+        // join() : 인자로 전달된 값을 바탕으로 모든 배열 요소를 연결하여 하나의 String 값으로 반환
+        let result2 = arr.join(' ');
+        console.log("join() ==== ", result2);
+
+        // reverse() : 배열 요소의 순서를 뒤집는 기능
+        let result3 = arr.reverse();
+        console.log("reverse() ==== ", result3);
+
+
+        /** 동적 배열 요소 추가 및 삭제 **/
+
+        // push() : 배열의 마지막에 요소를 추가하는 기능
+        arr.push("Kotlin");
+        arr.push("Swift");
+        console.log("push() ==== ", arr);
+
+        // pop() : 배열의 마지막 요소를 제거하는 기능, 제거한 마지막 요소 반환한다.
+        let result4 = arr.pop()
+        console.log("pop() data ==== ", result4);
+        console.log("pop() ==== ", arr);
+
+        // unshift() : 배열의 가장 앞쪽에 요소를 추가하는 기능
+        arr.unshift("Flutter");
+        console.log("unshift() ==== ", arr);
+
+        // shift() : 배열의 가장 앞쪽에 있는 요소를 삭제하는 기능
+        let result5 = arr.shift();
+        console.log("shift() data ==== ", result5);
+        console.log("shift() ==== ", arr);
+
+
+    </script>
+
+</body>
+</html>
