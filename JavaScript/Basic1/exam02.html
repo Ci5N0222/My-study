@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="txt" value="Hello JS">
+
+    <div id="div">Hello JS</div>
+
+    <script>
+        
+        // JavaScript에는 명시적 자료형이 없음
+        let input = document.getElementById("txt");
+
+        // 속성
+        console.log("Value === ", input.value);
+        console.log("ID === ", input.id);
+        console.log("Class === ", input.class);
+
+        let div = document.querySelector('#div');
+        console.log("ID === ", div.id);
+        console.log("HTML 요소 사이 값 === ", div.innerHTML);
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // const input = document.querySelector('#txt').value;
+            let input = document.getElementById('txt');
+            console.log(input.value);
+            
+            input.value = '졸려...';
+            console.log(input.value);
+
+        });
+
+    </script>
+
+    <input type="text" id="txt" value="피곤...">
+
+</body>
+</html>

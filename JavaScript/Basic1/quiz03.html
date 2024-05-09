@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="setTable()">버튼</button>
+
+    <script>
+        const setTable = () => {
+            const row = prompt("행");
+            const col = prompt("열");
+
+            if(row === null || col === null){
+                console.log("값 안넣음");
+                return false;
+            }
+            if(isNaN(row) || row.trim() === "") {
+                console.log("값 잘못 넣음");
+                return false;
+            }
+            if(isNaN(col) || col.trim() === "") {
+                console.log("값 잘못 넣음");
+                return false;
+            }
+
+            let count = 1;
+            document.write(`<table border='1'>`);
+            for(let i=0; i<row; i++){
+                document.write('<tr>');
+                for(let j=0; j<col; j++){
+                    document.write(`<td>${count}</td>`);
+                    count++;
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            width: 300px;
+            height: 400px;
+        }
+        
+        .content {
+            flex: 5;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-list {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .btn-list > button {
+            width: 80px;
+            height: 40px;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-green {
+            background-color: green;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="content" id="box">
+            I'm Box!
+        </div>
+        <div class="btn-list">
+            <button onclick="red()">RED</button>
+            <button onclick="green()">GREEN</button>
+            <button onclick="blue()">BLUE</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        const box = document.querySelector('#box');
+
+        const red = () => {
+            // 새로운 속성 부여
+            box.setAttribute("style", "background-color:red;");
+
+            // class 추가 및 제거
+            // box.classList.remove("bg-green");
+            // box.classList.remove("bg-blue");
+            // box.classList.add("bg-red");
+        }
+
+        const green = () => {
+            box.setAttribute("style", "background-color:green;");
+
+            // box.classList.remove("bg-red");
+            // box.classList.remove("bg-blue");
+            // box.classList.add("bg-green");
+        }
+
+        const blue = () => {
+            box.setAttribute("style", "background-color:blue;");
+
+            // box.classList.remove("bg-red");
+            // box.classList.remove("bg-green");
+            // box.classList.add("bg-blue");
+        } 
+
+    </script>
+
+</body>
+</html>

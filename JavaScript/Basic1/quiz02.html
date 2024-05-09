@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mul()">버튼</button>
+    <script>
+        // 구구단 만들기
+        const mul = () => {
+            const input = prompt("실행시킬 단 입력");
+            if(input == null){
+                console.log("입력값 없음");
+            } else if(isNaN(input) || input.trim() === ""){
+                console.log("잘못 입력함");
+            } else {
+                for(let i=1; i<=9; i++){
+                    console.log(`${input} X ${i} = `, input * i);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

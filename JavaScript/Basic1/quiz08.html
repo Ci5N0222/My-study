@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 100px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            display: block;
+            width: 300px;
+            height: 30px;
+            margin: 10px auto;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h2>비밀번호 입력</h2>
+    <input type="password" id="password1" placeholder="password">
+    <input type="password" id="password2" placeholder="password 확인">
+    <p id="text"></p>
+
+    <script>
+        const pw1 = document.querySelector('#password1');
+        const pw2 = document.querySelector('#password2');
+        const text = document.querySelector('#text');
+
+        let password1 = "";
+        let password2 = "";
+
+        pw1.addEventListener('keyup', (e) => {
+            password1 = e.target.value;
+            if(password1 === ""){
+                text.style.display = 'none';
+            } else if(password1 === password2){
+                text.innerHTML = "비밀번호 일치!"
+                text.style.color = 'green';
+                text.style.display = 'block';
+            } else {
+                text.innerHTML = "비밀번호 불일치!"
+                text.style.color = 'red';
+                text.style.display = 'block';
+            }
+        });
+
+        pw2.addEventListener('keyup', (e) => {
+            password2 = e.target.value;
+            if(password2 === ""){
+                text.style.display = 'none';
+            } else if(password1 === password2){
+                text.innerHTML = "비밀번호 일치!"
+                text.style.color = 'green';
+                text.style.display = 'block';
+            } else {
+                text.innerHTML = "비밀번호 불일치!"
+                text.style.color = 'red';
+                text.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

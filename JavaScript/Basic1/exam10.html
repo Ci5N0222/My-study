@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /**
+         *  onclick
+         *  mouse enter / leave / move
+         *  keyboard keyup / keydown
+         *  onload
+         */    
+
+        // 페이지가 모두 로딩된 후 실행
+        // window.onload = function(){}
+        // document.ready();
+
+        // 사용자가 브라우저를 종료할 때 실행
+        // window.onunload = function(){}
+        window.onbeforeunload = function(){
+            // 팝업창 띄우는 기능
+            window.open("https://www.naver.com", "", "width=200, height=200");
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('#btn');
+            btn.onclick = function(){
+                alert("Pop!");
+                
+            }
+        });
+
+        
+        
+    </script>
+
+</head>
+<body>
+    
+    <button id="btn">Pop!</button>
+
+</body>
+</html>

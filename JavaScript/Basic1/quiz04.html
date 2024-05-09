@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="typescript/exam04.js"></script>
+
+    <style>
+        div {
+            border: 1px solid black;
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <input type="text" id="text">
+    <button onclick="btnEvent()">Event!</button>
+    <button onclick="btnDelete()">Delete!</button>
+    <div></div>
+
+    <script>
+
+        const text = document.querySelector('#text');
+        const div = document.querySelector('div');
+
+        const btnEvent = () => {
+            // alert
+            // alert(text.value);
+            // text.value = "";
+
+            // div
+            div.innerHTML = text.value;
+        }
+
+        const btnDelete = () => {
+            text.value = "";
+            div.innerHTML = "";
+        }
+
+    </script>
+
+
+</body>
+</html>

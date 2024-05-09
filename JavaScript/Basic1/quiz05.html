@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+        }
+
+        .row {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .items {
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <input type="text" class="items" id="input1" placeholder="첫 번째 수"/>
+        </div>
+        <div class="row">
+            <input type="text" class="items" id="input2" placeholder="두 번째 수" />
+        </div>
+        <div class="row">
+            <button class="items" onclick="plus()">+</button>
+        </div>
+        <div class="row" class="items" id="result">result</div>
+    </div>
+
+    <button id="reset" style="width: 100px; height: 50px;" onclick="reset()">Reset</button>
+
+    <script>
+        const input1 = document.querySelector('#input1');
+        const input2 = document.querySelector('#input2');
+        let result = document.querySelector('#result');
+
+        const plus = () => {
+            const number = parseInt(input1.value) + parseInt(input2.value);
+            result.innerHTML = number;
+        }
+        
+        const reset = () => {
+             input1.value = "";
+             input2.value = "";
+             result.innerHTML = "result";
+        }
+
+    </script>
+
+</body>
+</html>
