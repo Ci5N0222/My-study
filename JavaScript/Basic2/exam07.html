@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- kakao postcode -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+
+        /** Find postcode event **/
+        const postCodeEvent = () => {
+            new daum.Postcode({
+                oncomplete: data => {
+                    console.log(data);
+                    address.value = data.address;
+                    zonecode.value = data.zonecode;
+                }
+            }).open();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const zonecode = document.querySelector('#zonecode');
+            const address = document.querySelector('#address');
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <input type="text" id="zonecode" placeholder="우편번호" readonly>
+    <input type="text" id="address" placeholder="기본주소" readonly>
+    <input type="text" id="detail" placeholder="상세주소">
+    <button id="postcode" onclick="postCodeEvent()">우편번호 찾기</button>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+  
+        let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+        /** 배열 메서드 **/
+
+        /** slice() **/
+        // 배열 내에서 특정 범위 내 요소들을 추출하여 반환하는 함수
+            // 인자값 1 : 추출 시작 위치 ( Inclusive - 포함 )
+            // 인자값 2 : 추출 종료 위치 ( Exclusive - 제외 )
+        // 추출 후에도 원본 배열에는 영향을 미치지 않는다.
+        let result = arr.slice(4);
+        console.log("slice(4) === ", result.join(' '));
+  
+        /** splice() **/
+        // 1. 배열 내에서 특정 시작점부터 특정 개수 만큼의 데이터를 삭제
+        // 2. 특정 위치에 데이터를 끼워 넣는 기능
+            // 인자값 1 : 시작 Index
+            // 인자값 2 : 몇 개 (개수)
+        // 원본에 영향을 미침
+        console.log("Splice before === ", arr);
+
+        // 4번 Index부터 뒷쪽 요소를 모두 삭제
+        // arr.splice(4);
+
+        // 2번 Index부터 요소 1개를 삭제
+        // arr.splice(2, 1);
+
+        // 3번 Index부터 2개의 요소를 삭제하고, 삭제한 위치에 "Z"를 추가
+        // arr.splice(3, 2, "Z");
+
+        // 3번 Index부터 0개의 요소를 삭제 (요소를 삭제하지 않고), "Z"를 추가
+        arr.splice(3, 0, "Z");
+
+        console.log("Splice after === ", arr);
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Kakao map -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e47f47b2914064699e75176ec4928a7e"></script>
+
+
+</head>
+<body>
+    
+    <div id="map" style="width:500px;height:400px;"></div>
+
+
+    <script>
+        const container = document.getElementById('map'); 
+
+        let options = { 
+            center: new kakao.maps.LatLng(33.450701, 126.570667), 
+            level: 3 
+        };
+
+        let map = new kakao.maps.Map(container, options); 
+        
+        let idList = [];
+
+        // 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
+        kakao.maps.event.addListener(map, 'click', function(e) {        
+            let position = e.latLng;
+
+            // 마커를 생성합니다
+            let marker = new kakao.maps.Marker({
+                position
+            });
+            marker.setMap(map);
+
+            // 마커를 삭제하는 우클릭 이벤트
+            kakao.maps.event.addListener(marker, 'rightclick', function() {
+                marker.setMap();
+            });
+        });
+    </script>
+</body>
+</html>

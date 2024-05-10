@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /**
+         *  () : 함수
+         *  [] : 배열
+         *  {} : 객체
+         * 
+         *  ** JavaScript 객체 **
+         *  객체를 만드는 3가지 방법
+         *  1. 객체 Literal ( 가장 많이 사용되는 방식 )
+         *      - Key 값으로 숫자도 사용 가능하다
+         *  2. 생성자 
+         *  3. 기본 객체 Object
+         */
+
+        // 1. 객체 Literal
+        // 표기법 : JSON ( JavaScript Object Notation ) - 직렬화의 대명사
+        // 직렬화 : 여러 언어들 사이에서 특정 언어를 통신할 때, 공통 언어로 변경하는 작업
+        //          특정 언어들이 사용하는 데이터 형식을 스트링 형태로 변환
+        // 역직렬화 : 직렬화된 데이터를 언어에서 사용 가능하게 변환하는 작업
+        // JSON : 현 시점 기준 크로스 플랫폼/언어 간 데이터 교환용 직렬화 방식으로 유명하다.
+        let obj = {
+            id: 1001,
+            name: "kim",
+            age: 20,
+            1: "One",
+            helllo: function(){console.log("Hello");}
+        };
+
+        console.log(obj.name);
+        console.log(obj[1]);
+
+        // 2. 생성자
+        function Music(id, title, singer){
+            this.id = id;
+            this.title = title;
+            this.singer = singer;
+        }
+
+        let obj2 = new Music("1001", "After Like", "IVE");
+
+        console.log(obj2);
+
+        // 3. 기본 객체 Object
+        let obj3 = new Object();
+        obj3.id = 1002;
+        obj3.title = "범죄도시4";
+        obj3.genre = "액션";
+
+    </script>
+
+</body>
+</html>

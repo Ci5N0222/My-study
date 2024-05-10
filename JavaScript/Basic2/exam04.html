@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+
+    <script>
+        let btns = document.querySelectorAll('button');
+        console.log(btns);
+
+        // for(let button of btns){
+        //     button.addEventListener('click', () => {
+        //         alert("Test!");
+        //     });
+        // }
+
+        btns.forEach((button, i) => {
+            button.addEventListener('click', () => {
+                alert(`Test-${i}!!`);
+            });
+        });
+        
+    </script>
+
+</body>
+</html>

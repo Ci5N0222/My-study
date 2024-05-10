@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        fieldset div {
+            height: 20px;
+        }
+SS
+        button {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 18px;
+        }
+
+    </style>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const addText = document.querySelector('#addText');
+            const delText = document.querySelector('#delText');
+            const wordList = document.querySelector('#wordList');
+
+            wordList.innerHTML = list.join(', ');
+        });
+
+        let list = [];
+        
+        const addWord = () => {
+            if(addText.value === "") return alert("빈칸임!");
+
+            list.push(addText.value);
+            wordList.innerHTML = list.join(', ');
+            addText.value = "";
+        }
+
+        const delWord = () => {
+            if(delText.value === "") return alert("빈칸임!");
+
+            let index = list.indexOf(delText.value);
+            if(index === -1) {
+                delText.value = "";
+                return alert("그런 단어 없음!");
+            }
+
+            list.splice(index, 1);
+            wordList.innerHTML = list.join(', ');
+            delText.value = "";
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <fieldset>
+        <legend> 목록 </legend>
+        <div id="wordList"></div>
+    </fieldset>
+    <br />
+
+    <input type="text" id="addText" placeholder="추가할 단어를 입력하세요.">
+    <button onclick="addWord()">추가하기</button>
+    <br />
+
+    <input type="text" id="delText" placeholder="삭제할 단어를 입력하세요">
+    <button onclick="delWord()">삭제하기</button>
+
+</body>
+</html>
