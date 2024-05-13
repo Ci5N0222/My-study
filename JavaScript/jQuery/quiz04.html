@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <script>
+        $(() => {
+
+            $('#pw1').on('keyup', () => {
+                if($('#pw1').val() === "" || $('#pw2').val() === ""){
+                    $('#text').html(" ");
+                } else if($('#pw1').val() === $('#pw2').val()){
+                    $('#text').html("비밀번호 일치!");
+                    $('#text').css({
+                        "color": "green",
+                        "display": "block"
+                    });
+                } else { 
+                    $('#text').html("비밀번호 불일치!");
+                    $('#text').css({
+                        "color": "red",
+                        "display": "block"
+                    });
+                }
+            });
+
+            $('#pw2').on('keyup', () => {
+                if($('#pw1').val() === "" || $('#pw2').val() === ""){
+                    $('#text').html(" ");
+                } else if($('#pw1').val() === $('#pw2').val()){
+                    $('#text').html("비밀번호 일치!");
+                    $('#text').css({
+                        "color": "green",
+                        "display": "block"
+                    });
+                } else {
+                    $('#text').html("비밀번호 불일치!");
+                    $('#text').css({
+                        "color": "red",
+                        "display": "block"
+                    });
+                }
+            });
+
+        });
+    </script>
+
+    <style>
+
+        #form {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        input {
+            width: 250px;
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            height: 20px;
+        }
+
+    </style>
+
+</head>
+    
+    
+
+<body>
+    
+    <div id="form">
+        <h2>패스워드 확인</h2>
+        <input type="text" id="pw1" placeholder="password 입력">
+        <input type="text" id="pw2"placeholder="password 확인">
+        <p id="text"> </p>
+    </div>
+</body>
+</html>

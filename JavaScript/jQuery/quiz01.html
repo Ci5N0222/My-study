@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="main.js" defer></script>
+
+    <script>
+        $(function(){
+            $('#pop').on('click', function(){
+                alert($('#txt').val());
+                $('#txt').val("");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="pop" disabled>Pop</button>
+</body>
+</html>

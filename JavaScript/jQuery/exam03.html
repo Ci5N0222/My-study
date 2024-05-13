@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        /* 구조 선택자 */
+        div:first-child{
+            background-color: pink;
+        }
+
+        div:nth-child(2){
+            background-color: dodgerblue;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>text1</div>
+    <div>text2</div>
+    <div>text3</div>
+    <div>text4</div>
+
+    <script>
+        $('div').html();
+        
+    </script>
+</body>
+</html>

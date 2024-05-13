@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+
+        $(() => {
+
+            // 박스 내부 기존 내용보다 앞에 내용을 넣을 때
+            $('#container').prepend("Prepend <br />");
+
+            // 박스 내부 기존 내용 뒤에 내용을 넣을 때
+            $('#container').append("<br /> Append");
+
+            // 박스 외부 박스 앞쪽에 내용을 넣을 때
+            $('#container').before("Before");
+
+            // 박스 외부 박스 뒤쪽에 내용을 넣을 때
+            $('#container').after("After");
+
+            $('#container').prepend("Prepend2 <br />");
+            $('#container').append("<br /> Append2");
+            $('#container').before("<br /> Before2");
+            $('#container').after("After2 <br />");
+
+            // 1번 방식
+            // let prepend1 = $("<div>Prepend1</div>");
+
+            // 2번 방식
+            let prepend1 = $("<div>");
+            prepend1.html("Prepend1");
+            
+            $('#container').prepend(prepend1);
+
+            let append1 = $("<div>");
+            append1.html("Append1");
+            append1.css({
+                "background-color" : "skyblue"
+            })
+
+            $('#container').append(append1);
+        });
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="container">
+        [ 기존내용 ] 
+    </div>
+    
+</body>
+</html>

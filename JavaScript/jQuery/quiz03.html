@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <script>
+        $(() => {
+
+            $('#btn').on('click', () => {
+                let number = $('#number').val();
+                let color = $('#color').val();
+
+                $(`p:nth-child(${number})`).css({
+                    backgroundColor: color
+                });
+
+                $('#number').val("");
+                $('#color').val("");
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <p>P1</p>
+    <p>P2</p>
+    <p>P3</p>
+    <p>P4</p>
+    <input type="text" id="number" placeholder="줄 번호를 입력하세요">
+    <input type="text" id="color" placeholder="색을 입력하세요">
+    <button id="btn">적용</button>
+</body>
+</html>

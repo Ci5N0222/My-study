@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="box">I'm Box</div>
+
+    <button data-color="red">Test1</button>
+    <button data-color="blue">Test2</button>
+    <button data-color="green">Test3</button>
+
+    <script>
+        // document.getElementsByTagName("button");
+        
+        // for문을 사용하지 않아도 모든 요소에 이벤트 적용 가능
+        $('button').on('click', function(e){
+            // jQuery 객체
+            console.log("$(this) : ", $(this).html());
+
+            // JavaScript 객체
+            console.log("this : ", this.innerHTML);
+            console.log("e.currentTarget : ", e.currentTarget.innerHTML);
+
+            $('#box').css({
+                // "background-color": this.dataset.color
+                // "background-color": this.getAttribute("data-color")
+                "background-color": $(this).attr("data-color")
+            });
+
+        });
+
+        let btns = $('button');
+        console.log($(btns[0]).html());
+
+    </script>
+</body>
+</html>

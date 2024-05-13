@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        p {
+            margin: 1px;
+        }
+
+        .container {
+            border: 1px solid black;
+            width: 350px;
+            height: 400px;
+            margin: 20px auto;
+            overflow: auto;
+        }
+
+        .btn-form{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 300px;
+            margin: auto;
+        }
+
+    </style>
+
+    <script>
+        $(() => {
+
+            let count = 1;
+
+            $('#upAdd').on('click', () => {
+                let text = `
+                    <p>
+                        ContentMessage Here: ${count++}
+                    </p>
+                `
+                $('.container').prepend(text);
+            });
+
+            $('#downAdd').on('click', () => {
+                let text = `
+                    <p>
+                        ContentMessage Here: ${count++}
+                    </p>
+                `
+                $('.container').append(text);
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container"></div>
+    <div class="btn-form">
+        <button id="upAdd">위로 추가 하기</button>
+        <button id="downAdd">아래로 추가 하기</button>
+    </div>
+</body>
+</html>

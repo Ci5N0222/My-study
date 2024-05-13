@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+</head>
+<body>
+    
+    <input type="text" id="input">
+    <div id="div" style="display: none;"></div>
+    <button id="button">Button</button>
+
+    <script>
+        
+        // [jQeury] value → valu()
+        $("#input").val("??");              // setter;
+        let value = $("#input").val();      // getter;
+        console.log(value);
+
+        // [jQuery] innerHTML → html()
+        $("#div").html("jQuery 연습");
+        let divHTML = $("#div").html();
+        console.log(divHTML);
+
+        // [jQuery] addEventListener → on()
+        $("#button").on("click", function(){
+            $('#div').css({
+                display:"block", 
+                backgroundColor:"pink", 
+                color:"white"
+            });
+        });
+
+    </script>
+    
+</body>
+</html>

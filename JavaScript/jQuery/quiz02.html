@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+        }
+    </style>
+
+    <script>
+        // DOM이 전부 load 된후 실행
+        $(function(){
+
+            $('#pop').on('click', function(){
+                let color = $('#txt').val();
+                $('#box').css({ backgroundColor: color });
+                $('#txt').val("");
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id="box">I'm Box</div>
+    <input type="text" id="txt">
+    <button id="pop">Pop</button>
+</body>
+</html>
