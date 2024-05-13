@@ -1,0 +1,105 @@
+:root {
+    /* CSS에서 사용할 변수 선언 */
+    --text-whit: white;
+    --text-accent: #d49466;
+    --color-bg: #263343;
+}
+
+body {
+    margin: 0px;
+    background: #263343;
+    /* Google-font */
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a {
+    /* a태그 밑줄 제거 */
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    color: var(--color-bg);
+    padding: 8px 12px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-accent);
+    font-size: 28px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.nav-menu > a {
+    padding: 8px 12px;
+}
+.nav-menu > a:hover {
+    color: var(--text-accent);
+}
+
+.nav-icons {
+    display: flex;
+    list-style: none;
+    color: var(--text-accent);
+}
+.nav-icons i {
+    padding: 2px 6px;
+}
+
+.nav-toggle {
+    display: none;
+    position: absolute;
+    right: 24px;
+    top: 12px;
+    font-size: 24px;
+    color: var(--text-accent);
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        display:none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .nav-icons {
+        display:none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu.active,
+    .nav-icons.active {
+        display: flex;
+    }
+
+    .nav-menu > a:hover {
+        width: 100%;
+        text-align: center;
+        background: var(--text-accent);
+        color: var(--text-white);
+    }
+}
+

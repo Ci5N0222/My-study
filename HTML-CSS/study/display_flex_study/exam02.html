@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+        
+        div {
+            border: 1px solid #eee;
+        }
+
+        .container {
+            display: flex;
+            margin:auto;
+            width: 500px;
+            height: 500px;
+        }
+
+        .col1 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .col2 {
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row1 {
+            flex: 2;
+        }
+
+        .row2 {
+            flex: 3;
+        }
+
+        .bg-orange {
+            background-color: orange;
+        }
+        
+        .bg-skyblue {
+            background-color: skyblue;
+        }
+
+        .bg-grey {
+            background-color: grey;
+        }
+
+        .bg-purple {
+            background-color: purple;
+        }
+
+        .bg-avatar1 {
+            background-image: url('img/avatar1.png');
+            background-size: 100%;
+        }
+        .bg-avatar2 {
+            background-image: url('img/avatar2.png');
+            background-size: 100%;
+        }
+        .bg-image1 {
+            background-image: url('img/image1.jpg');
+            background-size: 100%;
+        }
+        .bg-image2 {
+            background-image: url('img/image2.jpg');
+            background-size: 100%;
+        }
+
+        .text-col {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="col1 bg-orange">
+            <p class="text-col">Flex Practice</p>
+        </div>
+        <div class="col2">
+            <div class="row1 bg-avatar1">
+                <!-- <img src="image1.png" alt="avatar" width="100%" height="100%"> -->
+            </div>
+            <div class="row2 bg-skyblue" id="box2"></div>
+        </div>
+        <div class="col2">
+            <div class="row2 bg-grey" id="box3"></div>
+            <div class="row1 bg-purple" id="box4"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        const box2 = document.querySelector('#box2');
+        box2.addEventListener('click', () => {
+            if(document.querySelector('.bg-image1')){
+                box2.classList.remove('bg-image1');
+            } else {
+                box2.classList.add('bg-image1');
+            }
+        });
+        const box3 = document.querySelector('#box3');
+        box3.addEventListener('click', () => {
+            if(document.querySelector('.bg-image2')){
+                box3.classList.remove('bg-image2');
+            } else {
+                box3.classList.add('bg-image2');
+            }
+        });
+        const box4 = document.querySelector('#box4');
+        box4.addEventListener('click', () => {
+            if(document.querySelector('.bg-avatar2')){
+                box4.classList.remove('bg-avatar2');
+            } else {
+                box4.classList.add('bg-avatar2');
+            }
+        });
+
+    </script>
+
+</body>
+</html>

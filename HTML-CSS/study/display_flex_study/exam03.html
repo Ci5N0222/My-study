@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: "Briem Hand", cursive;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+        }
+
+        .container {
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+            width: 800px;
+            height: 500px;
+        }
+
+        .header {
+            flex: 3;
+            display: flex;
+        }
+        .header .logo {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2px 4px;
+        }
+        .header .title {
+            flex: 10;
+            font-family: "Jaro", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+        .header .reserved {
+            flex: 2;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            margin: 10px;
+        }
+        .header .reserved > img {
+            margin-right: 5px;
+        }
+
+        .menu {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        .menu .col {
+            flex: 1;
+        }
+        .col:hover {
+            font-weight: 900;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            opacity: 80%;
+        }
+
+        .content {
+            flex: 15;
+            display: flex;
+        }
+        .content .main {
+            flex: 7;
+            display: flex;
+            flex-direction: column;
+        }
+        .content .main .banner {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content .main .image-list {
+            flex: 2;
+            display: flex;
+        }
+        .content .main .image-list .image-list-col {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content .info {
+            flex: 3;
+        }
+        .content .info .login {
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+        }
+        .content .info .login .login-title {
+            flex: 1;
+            padding: 2px;
+            text-align: center;
+        }
+        .content .info .login > input {
+            flex: 1;
+        }
+        .content .info .login .login-btn-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;     
+        }
+        .content .info .login .login-btn-box > button {
+            margin: 2px 10px;
+        }
+
+        .content .info .email {
+            height: 60%;
+        }
+
+        .footer {
+            flex: 2;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="#"><img src="img/Logo2.png" width="70px" alt="Logo" /></a>
+            </div>
+            <div class="title">'Sion's Simple Mini home!!</div>
+            <div class="reserved">
+                <img src="img/icon-facebook.png" alt="icon-facebook" width="17%" height="30%">
+                <img src="img/icon-instargram.png" alt="icon-instargram" width="17%" height="30%">
+            </div>
+        </div>
+        <div class="menu">
+            <div class="col">Home</div>
+            <div class="col">About</div>
+            <div class="col">Portfolio</div>
+            <div class="col">Contact</div>
+        </div>
+        <div class="content">
+            <div class="main">
+                <div class="banner">
+                    <img src="img/main-banner.jpg" width="95%" height="95%" alt="main-banner">
+                </div>
+                <div class="image-list">
+                    <div class="image-list-col"><img src="img/item1.jpg" alt="camera" width="90%" height="90%" ></div>
+                    <div class="image-list-col"><img src="img/item2.jpg" alt="clock" width="90%" height="90%"></div>
+                    <div class="image-list-col"><img src="img/item3.jpg" alt="bike" width="90%" height="90%"></div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="login">
+                    <div class="login-title">Login box</div>
+                    <input type="text" name="" id="" placeholder="Input your ID">
+                    <input type="text" name="" id="" placeholder="Input your Password">
+                    <div class="login-btn-box">
+                        <button>Sign-in</button>
+                        <button>Sign-up</button>
+                    </div>
+                </div>
+                <div class="email">Email</div>
+            </div>
+        </div>
+        <div class="footer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <br />
+            create by sion-noh
+        </div>
+    </div>
+
+</body>
+</html>
