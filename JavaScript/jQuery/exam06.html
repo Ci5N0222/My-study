@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <script>
+        $(() => {
+
+            // brother02를 기준으로 baby02를 검색해서 background-color를 pink로 적용
+            $('#brother02').prev().find('#baby02').css({
+                "background-color": "pink"
+            });
+
+            // baby를 기준으로 parent02를 검색해서 color를 green으로 설정
+            $('#baby').closest('#parent01').next().css({
+                "color": "green"
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id="home">
+        Home
+        <div id="grand_parent">
+            GrandParent
+            <div id="parent01">
+                Parent01
+                <div id="brother01">
+                    Brother01
+                </div>
+                <div id="me">
+                    Me
+                    <div id="sister01">
+                        Sister01
+                        <div id="baby">
+                            Baby01
+                        </div>
+                    </div>
+                    <div id="sister02">
+                        Sister02
+                        <div id="baby02">
+                            Baby02
+                        </div>
+                    </div>
+                </div>
+                <div id="brother02">
+                    Brother02
+                </div>
+            </div>
+            <div id="parent02">
+                Parent02
+            </div>
+        </div>
+    </div>
+</body>
+</html>

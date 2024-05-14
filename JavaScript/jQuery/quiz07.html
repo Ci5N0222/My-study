@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        .file-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .file-list > .package {
+            margin: 3px;
+        }
+        .delete-btn {
+            border: none;
+            background-color: white;
+        }
+        .delete-btn:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+
+        $(() => {
+
+            $('.file-list').on('click', '.delete-btn', (e) => {
+                $(e.currentTarget).parent().remove();
+            });
+
+            $('#addFile').on('click', (e) => {
+                if($('.file-list').children().length >= 5) return alert("더 이상은 Naver");
+                const item = `
+                    <div class="package">
+                        <input type="file">
+                        <button class="delete-btn">x</button>
+                    </div>
+                `
+                $('.file-list').append(item);
+            });
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+    파일 첨부 <button id="addFile"> + </button>
+    <fieldset>
+        <legend>FileList</legend>
+        <div class="file-list">
+        </div>
+    </fieldset>
+
+</body>
+</html>
