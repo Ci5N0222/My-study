@@ -76,3 +76,40 @@ $('.del').on('click', () => {
 });
 
 ```
+
+### 요소 검색
+
+``` bash
+ /* 상위 요소 */
+1. parent(): 기준 요소의 직계 Parent 요소를 찾아 반환
+    $('#me').parent();
+    console.log($('#me'));
+    console.log($('#me').parent());
+    console.log($('#me').parent().parent());
+
+2. closest(): 기존 요소의 prent 부터 모든 조상 전체에 걸쳐 선택자 조건에 맞는 요소를 찾아 반환
+    console.log($('#me').closest('#grand_parent'));
+
+
+/* 하위 요소 */
+1. children(): 기준 요소의 직계 자손을 검색하여 반환
+    // 배열 형태로 반환, 선택자 사용 가능
+    console.log($('#me').children());
+    console.log($('#me').children()[0]);
+    console.log($('#me').children('#sister01'));
+
+2. find(): 기준 요소의 후손 전체에서 선택자 조건에 맞는 요소를 찾아 반환
+    console.log($('#me').find('#baby'));
+
+
+/* 형제 요소 */
+1. prev(), next(): 기준 요소의 바로 앞 또는 뒷 쪽 요소를 반환
+    console.log($('#me').prev());
+    console.log($('#me').next());
+
+2. siblings(): 기존 요소와 동수준 요수 중 선택자 조건에 맞는 요소를 찾아 반환
+    // 배열 형태로 반환, 선택자 사용 가능
+    console.log($('#me').siblings());
+    console.log($('#me').siblings()[0]);
+    console.log($('#me').siblings('#brother01'));
+```
