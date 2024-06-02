@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.navi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+    height: 60px;
+    padding: 15px;
+}
+
+.banner {
+    height: 300px;
+    background-color: bisque;
+}
+
+.contents-form {
+    width: 90%;
+    margin: 20px auto;
+    background-color: aquamarine;
+}
+
+.title {
+    font-size: 20px;
+}
