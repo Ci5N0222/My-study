@@ -27,6 +27,10 @@
     font-weight: 800;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
 .navi > .user > img {
     width: 30px;
     height: 30px;
@@ -87,4 +91,46 @@
 
 .content-item > span {
     font-size: 12px;
+}
+
+.contents-video {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.contents-video > video {
+    width: 100%;
+    max-width: 1060px;
+}
+
+.detail-contents {
+    width: 95%;
+    padding: 10px;
+    margin: auto;
+}
+
+.detail-title {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.detail-info {
+    font-size: 14px;
+    color: gray;
+    padding: 3px;
+}
+
+.detail-info > .detail-writer {
+    margin-bottom: 3px;
+}
+
+.detail-content {
+    margin-top: 15px;
+}
+
+.detail-contents > img {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
 }
